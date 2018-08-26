@@ -1,0 +1,4 @@
+/* DashboardComponent's private CSS styles */
+
+  .row.dashboard .card{border-radius:0;margin:0;}
+  .dashboard {margin-top:5px;}

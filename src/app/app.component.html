@@ -1,0 +1,192 @@
+<nav>
+    <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left">
+          <li><a routerLink="/dashboard">Dashboard</a></li>
+          <li><a routerLink="/heroes">Heroes</a></li>
+        </ul>
+      </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
+
+
+
+
+
+        <div class="row">
+          <div class="col s12">
+            <p>This project is based on the <a href="https://angular.io/tutorial" target="_blank">Angular - Tutorial: Tour of Heroes</a>, added <a href="https://materializecss.com/" target="_blank">MaterializeCSS</a>, swapped out tutorial characters for <a href="https://en.wikipedia.org/wiki/Characters_of_Overwatch" target="_blank">characters of Overwatch</a>.</p>
+          </div>
+        </div>
+
+
+
+
+
+</div>
+
+<!--
+<h2>The Application Shell</h2>
+<p>The application shell is controlled by an Angular component named AppComponent</p>
+<p>Components are the fundamental building blocks of Angular applications. They display data on the screen, listen for user input, and take action based on that input.</p>
+<p>The double curly braces are Angular's <em>interpolation binding</em> syntax.
+  This interpolation binding presents the component's <code>title</code> property value
+  inside the HTML header tag.</p>
+<p>Most apps strive for a consistent look across the application.
+  The CLI generated an empty <code>styles.css</code> for this purpose.
+  Put your application-wide styles there.</p>
+<h3>Summary - Application Shell</h3>
+<ul>
+  <li>You created the initial application structure using the Angular CLI.</li>
+  <li>You learned that Angular components display data.</li>
+  <li>You used the double curly braces of interpolation to display the app title. </li>
+</ul>
+
+<h2>The Hero Editor</h2>
+<h3>Create the heroes component</h3>
+<p>ng generate component heroes</p>
+<p>You always import the Component symbol from the Angular core library and annotate the component class with @Component.</p>
+<p>@Component is a decorator function that specifies the Angular metadata for the component.</p>
+<p>The ngOnInit is a lifecycle hook Angular calls ngOnInit shortly after creating a component. It's a good place to put initialization logic.</p>
+<p>Always export the component class so you can import it elsewhere</p>
+<h3>Create a Hero class</h3>
+<p>Create a Hero class in its own file in the src/app folder.</p>
+
+
+<h3>Format with the uppercase pipe</h3>
+<p>Pipes are a good way to format strings, currency amounts, dates and other display data. Angular ships with several built-in pipes and you can create your own.</p>
+<h3>Two-way binding</h3>
+
+<h3>AppModule</h3>
+<p>Angular needs to know how the pieces of your application fit together and what other files and libraries the app requires. This information is called metadata</p>
+<p>Some of the metadata is in the @Component decorators that you added to your component classes. Other critical metadata is in @NgModule decorators.</p>
+<p>The most important @NgModule decorator annotates the top-level AppModule class.</p>
+<p>The Angular CLI generated an AppModule class in src/app/app.module.ts when it created the project. This is where you opt-in to the FormsModule.</p>
+
+<h3>Declare HeroesComponent</h3>
+<p>Every component must be declared in exactly one NgModule.</p>
+<h3>Summary - The Hero Editor</h3>
+<ul>
+  <li>You used the CLI to create a second <code>HeroesComponent</code>.</li>
+  <li>You displayed the <code>HeroesComponent</code> by adding it to the <code>AppComponent</code> shell. </li>
+  <li>You applied the <code>UppercasePipe</code> to format the name.</li>
+  <li>You used two-way data binding with the <code><a href="api/forms/NgModel" class="code-anchor">ngModel</a></code> directive.</li>
+  <li>You learned about the <code>AppModule</code>.</li>
+  <li>You imported the <code><a href="api/forms/FormsModule" class="code-anchor">FormsModule</a></code> in the <code>AppModule</code> so that Angular would recognize and apply the <code><a href="api/forms/NgModel" class="code-anchor">ngModel</a></code> directive. </li>
+  <li>You learned the importance of declaring components in the <code>AppModule</code>
+  and appreciated that the CLI declared it for you.</li>
+  </ul>
+
+  <h2>Displaying a Heroes List</h2>
+  <h3>Create mock heroes</h3>
+  <p>Create a file called mock-heroes.ts in the src/app/ folder. Define a HEROES constant as an array of ten heroes and export it.</p>
+  <h3>Displaying heroes</h3>
+  <p>Add a heroes property to the class that exposes these heroes for binding.</p>
+  <h3>List heroes with *ngFor, applied to li element</h3>
+  <p>The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list.</p>
+  <p>In this example</p>
+  <ul>
+    <li><code>&lt;li&gt;</code> is the host element</li>
+    <li><code>heroes</code> is the list from the <code>HeroesComponent</code> class.</li>
+    <li><code>hero</code> holds the current hero object for each iteration through the list. </li>
+    </ul>
+<h3>Master/Detail</h3>
+<p>In this section, you'll listen for the hero item click event and update the hero detail.</p>
+<p>The parentheses around click tell Angular to listen for the <li> element's click event. When the user clicks in the <li>, Angular executes the onSelect(hero) expression.</p>
+<h3>Add the click event handler</h3>
+<h3>Hide empty details with *ngIf</h3>
+<p>The component should only display the selected hero details if the selectedHero exists.</p>
+<h3>Style the selected hero in the list</h3>
+<p>The Angular class binding makes it easy to add and remove a CSS class conditionally. Just add [class.some-css-class]="some-condition" to the element you want to style.</p>
+<h3>Summary - Displaying a Heroes list</h3>
+<ul>
+  <li>The Tour of Heroes app displays a list of heroes in a Master/Detail view.</li>
+  <li>The user can select a hero and see that hero's details.</li>
+  <li>You used <code>*ngFor</code> to display a list.</li>
+  <li>You used <code>*ngIf</code> to conditionally include or exclude a block of HTML.</li>
+  <li>You can toggle a CSS style class with a <code>class</code> binding.</li>
+  </ul>
+
+  <h2>Master/Detail Components</h2>
+  <h3>Make the HeroDetailComponent</h3>
+  <p>ng generate component hero-detail</p>
+  <p>[hero]="selectedHero" is an Angular property binding.</p>
+  <p>It's a one way data binding from the selectedHero property of the HeroesComponent to the hero property of the target element, which maps to the hero property of the HeroDetailComponent</p>
+<h3>Summary - Master/Detail Components</h3>
+<ul>
+  <li>You created a separate, reusable <code>HeroDetailComponent</code>.</li>
+  <li>You used a property binding to give the parent <code>HeroesComponent</code> control over the child <code>HeroDetailComponent</code>.</li>
+  <li>You used the <code>@Input</code> decorator
+    to make the <code>hero</code> property available for binding
+    by the external <code>HeroesComponent</code>.</li>
+  </ul>
+
+  <h2>Services</h2>
+  <h3>Why services</h3>
+  <p>Components shouldn't fetch or save data directly and they certainly shouldn't knowingly present fake data. They should focus on presenting data and delegate data access to a service.</p>
+  <h3>Create the HeroService</h3>
+  <p>ng generate service hero</p>
+  <p>The command generates skeleton HeroService class in src/app/hero.service.ts The HeroService class </p>
+  <h3>@Injectable() services</h3>
+  <p>Notice that the new service imports the Angular Injectable symbol and annotates the class with the @Injectable() decorator. This marks the class as one that participates in the dependency injection system. </p>
+
+  <h3>Provide the HeroService</h3>
+  <h3>Update HeroesComponent</h3>
+  <h3>Observable HeroService</h3>
+  <p>Observable is one of the key classes in the RxJS library.</p>
+  <h3>Subscribe in HeroesComponent</h3>
+  <h3>Show messages</h3>
+  <h3>Create MessagesComponent</h3>
+  <p>Use the CLI to create the MessagesComponent.</p>
+  <p>ng generate component messages</p>
+<h3>Create the MessageService</h3>
+<p>ng generate service message</p>
+<h3>Summary - Services</h3>
+<ul>
+  <li>You refactored data access to the <code>HeroService</code> class.</li>
+  <li>You registered the <code>HeroService</code> as the <em>provider</em> of its service at the root level so that it can be injected anywhere in the app.</li>
+  <li>You used Angular Dependency Injection to inject it into a component.</li>
+  <li>You gave the <code>HeroService</code> <em>get data</em> method an asynchronous signature.</li>
+  <li>You discovered <code>Observable</code> and the RxJS <em>Observable</em> library.</li>
+  <li>You used RxJS <code>of()</code> to return an observable of mock heroes (<code>Observable&lt;Hero[]&gt;</code>).</li>
+  <li>The component's <code>ngOnInit</code> lifecycle hook calls the <code>HeroService</code> method, not the constructor.</li>
+  <li>You created a <code>MessageService</code> for loosely-coupled communication between classes.</li>
+  <li>The <code>HeroService</code> injected into a component is created with another injected service,
+  <code>MessageService</code>.</li>
+  </ul>
+  <h2>Routing</h2>
+  <h3>Add the AppRoutingModule</h3>
+  <p>ng generate module app-routing --flat --module=app</p>
+  <p>--flat puts the file in src/app instead of its own folder.</p>
+  <p>--module=app tells the CLI to register it in the imports array of the AppModule.</p>
+  <p>You generally don't declare components in a routing module so you can delete the @NgModule.declarations array and delete CommonModule references too.</p>
+<h3>Add routes</h3>
+<p>Routes tell the router which view to display when a user clicks a link or pastes a URL into the browser address bar.</p>
+<p>A typical Angular Route has two properties:</p>
+<ol>
+  <li><code>path</code>: a string that matches the URL in the browser address bar.</li>
+  <li><code>component</code>: the component that the router should create when navigating to this route.</li>
+  </ol>
+  <h3>Add a dashboard view</h3>
+  <p>ng generate component dashboard</p>
+  <h3>Add the dashboard route</h3>
+<p> path: 'dashboard', component: DashboardComponent ,</p>
+  <h3>Add a default route</h3>
+  <p> path: '', redirectTo: '/dashboard', pathMatch: 'full' ,</p>
+  <h3>Navigating to hero details</h3>
+  <h3>Extract the id route parameter</h3>
+  <p>In the ngOnInit() lifecycle hook call getHero() and define it as follows.</p>
+  <p>Like getHeroes(), getHero() has an asynchronous signature. It returns a mock hero as an Observable, using the RxJS of() function.</p>
+  <h3>Summary - Routing</h3>
+  <ul>
+    <li>You added the Angular router to navigate among different components.</li>
+    <li>You turned the <code>AppComponent</code> into a navigation shell with <code>&lt;router-outlet&gt;</code>.</li>
+    <li>You configured the router in an <code>AppRoutingModule</code> </li>
+    <li>You defined simple routes, a redirect route, and a parameterized route.</li>
+    <li>You used the <code>routerLink</code> directive in anchor elements.</li>
+    <li>You refactored a tightly-coupled master/detail view into a routed detail view.</li>
+    <li>You used router link parameters to navigate to the detail view of a user-selected hero.</li>
+    <li>You shared the <code>HeroService</code> among multiple components.</li>
+    </ul>
+  -->

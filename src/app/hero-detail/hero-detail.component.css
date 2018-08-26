@@ -1,0 +1,58 @@
+/* HeroDetailComponent's private CSS styles */
+
+
+@media only screen and (max-width: 600px) {
+    h2 {font-size: 100%;}
+    .shadow {background-color: rgba(0,0,0,.5); padding:10px;}
+}
+
+.player-card {
+    position: absolute;
+    width:600px;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}
+.player-card .title{
+    position: absolute;
+    width:inherit;
+	left: 00px;
+    top: 185px;
+    padding:0;
+    z-index: 2;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.player-card .name {
+
+    position: absolute;
+    left: 20px;
+    top: 180px;
+    z-index: 3;
+}
+
+/* Shared among all <div>s */
+div.detail {
+    background-color: #FFEE99;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+  
+  /* These examples use the `background` shorthand property */
+  .exampleone {
+    background: url("https://mdn.mozillademos.org/files/11987/startransparent.gif") #FFEE99 2.5cm bottom no-repeat;
+  }
+  .exampletwo {
+    background: url("https://mdn.mozillademos.org/files/11987/startransparent.gif") #FFEE99 3em 50% no-repeat;
+  }
+  
+  /* Multiple background images: Each image is matched with the
+     corresponding position, from first specified to last. */
+  .examplethree {
+    background-image:    url("https://mdn.mozillademos.org/files/11987/startransparent.gif"), 
+                         url("https://mdn.mozillademos.org/files/7693/catfront.png");
+    background-position: 0px 0px,
+                         center;
+  }

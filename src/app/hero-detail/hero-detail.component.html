@@ -1,0 +1,67 @@
+<div *ngIf="hero">
+  <div class="row">
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-image">
+          <img src="assets/img/overwatch/{{hero.bg}}">
+          <span class="card-title">
+            <h2 class="title1 shadow">{{ hero.name | uppercase }}</h2>
+          </span>
+        </div>
+        <div class="card-content">
+          <p>{{hero.description}}</p>
+        </div>
+        <div class="card-action">
+
+          <div class="row">
+            <div class="col s6 ">
+              <h3 class="title2">Role</h3> {{hero.role | uppercase }}
+            </div>
+            <div class="col s6 ">
+
+              <h3 class="title2">Difficulty</h3>
+
+              <div *ngIf="hero.difficulty==1">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star_border</i>
+                <i class="material-icons">star_border</i>
+              </div>
+
+              <div *ngIf="hero.difficulty==2">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star_border</i>
+              </div>
+              <div *ngIf="hero.difficulty==3">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 l6">
+      <div class="card">
+        <div class="card-content">
+
+          <h2 class="title2">Edit Hero</h2>
+          Name:
+          <input [(ngModel)]="hero.name" placeholder="name" /> Occupation:
+          <input [(ngModel)]="hero.occupation" placeholder="name" /> Role:
+          <input [(ngModel)]="hero.role" placeholder="name" /> Difficulty:
+          <input [(ngModel)]="hero.difficulty" placeholder="name" /> Description:
+          <input [(ngModel)]="hero.description" placeholder="name" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <a class="waves-effect waves-light btn" href="#" (click)="goBack()">go back</a>
+  </div>
+</div>

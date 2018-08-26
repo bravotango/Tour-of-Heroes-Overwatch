@@ -1,0 +1,20 @@
+<div class="row dashboard">
+  <div *ngFor="let hero of heroes">
+    <div *ngIf="!roleSelected || hero.role === roleSelected" routerLink="/detail/{{hero.id}}" class="col s12 m4 l3 center card">
+      <div class="card-content">
+        <img src="assets/img/overwatch/{{hero.img}}" alt="" class="circle responsive-img">
+        <h2 class="title2">{{hero.name}}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<h2>Filter by Role</h2>
+<a href="dashboard">Clear</a>
+<div *ngFor="let role of roles">
+  <label>
+    <input name="role" type="radio" [value]="role" [(ngModel)]="roleSelected" />
+    <span>{{role}}</span>
+  </label>
+</div>
+-->
