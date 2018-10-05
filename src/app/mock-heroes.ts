@@ -198,7 +198,18 @@ export const HEROES: Hero[] = [
         difficulty: 2,
         abilities: [],
         description:'Armed with his Peacekeeper revolver, McCree takes out targets with deadeye precision and dives out of danger with eagle-like speed.',
-    }
+    },
+    {
+        id: 29,
+        name: 'Reinhardt',
+        img: 'reinhardt.png',
+        bg: 'bg-reinhardt.jpg',
+        occupation:'Crusader (formerly',
+        role: 'Damage',
+        difficulty: 2,
+        abilities: [],
+        description:'Reinhardt’s Rocket Hammer is an exemplary melee weapon, able to deal punishing damage in a wide arc with every swing.'
 
+    }
 
 ];
