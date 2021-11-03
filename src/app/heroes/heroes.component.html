@@ -1,26 +1,31 @@
-
-
 <div class="row">
   <div class="col s12">
-    <div *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}"
-    
-    >
+    <div *ngFor="let hero of heroes" routerLink="/detail/{{ hero.id }}">
       <div class="card-panel grey lighten-5 z-depth-1">
         <div class="row">
           <div class="col s6 m3 l2">
-            <img src="assets/img/overwatch/{{hero.img}}" alt="" class="circle responsive-img">
+            <img
+              src="assets/img/overwatch/{{ hero.img }}"
+              alt=""
+              class="circle responsive-img"
+            />
             <!-- notice the "circle" class -->
           </div>
           <div class="col s6 m9 l10">
             <span class="black-text">
-              <h2 class="title2">{{hero.name}}<small class="hide-on-small-only">  {{hero.occupation}}</small></h2>
+              <h2 class="title2">
+                {{ hero.name
+                }}<small class="hide-on-small-only">
+                  {{ hero.occupation }}</small
+                >
+              </h2>
             </span>
           </div>
           <div class="col s12">
-              <span class="black-text">
-                {{hero.description}}
-              </span>
-            </div>
+            <span class="black-text">
+              {{ hero.description }}
+            </span>
+          </div>
         </div>
       </div>
     </div>
