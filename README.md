@@ -1,6 +1,18 @@
 # AngularTourOfHeroes
 
+This project is based on the Angular - Tutorial: Tour of Heroes project, added MaterializeCSS, swapped out tutorial characters for characters of Overwatch.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+
+## Screenshot
+
+This application is fully responsive and displays on mobile to desktop screens.
+
+![desktop screenshot](./src/assets/img/screenshot.png)
+
+## Deployed application
+
+[https://www.btgraphix.com/overwatch/#/dashboard](https://www.btgraphix.com/overwatch/#/dashboard)
 
 ## Development server
 

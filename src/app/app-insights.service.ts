@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment'
-import { AppInsights } from 'applicationinsights-js'
+import { environment } from '../environments/environment';
+import { AppInsights } from 'applicationinsights-js';
 
 @Injectable({
   providedIn: 'root'
