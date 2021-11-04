@@ -1,4 +1,4 @@
-# AngularTourOfHeroes
+# Angular Tour of Heroes - Overwatch
 
 This project is based on the Angular - Tutorial: Tour of Heroes project, added MaterializeCSS, swapped out tutorial characters for characters of Overwatch.
 
